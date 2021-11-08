@@ -25,7 +25,7 @@ app.on('whenReady', () => {
   /* Custom URI handler for linux and windows */
   app.setAsDefaultProtocolClient("portaltest");
   protocol.registerHttpProtocol('portaltest', (req, cb) => {
-    const url = req.url.substr(9)
+    const url = req.url.substr(1)
     var data = new Array ();
     let str2 = url.replace(":", " ");
     let arr2 = str2.split(' ',2);
@@ -38,7 +38,7 @@ app.on('whenReady', () => {
   })
   /* Custom URI handler for mac */
   app.on("open-url", (event, url) => {
-    const url2 = url.substr(9)
+    const url2 = url.substr(13)
     var data = new Array ();
     let str2 = url2.replace(":", " ");
     let arr2 = str2.split(' ',2);
